@@ -54,6 +54,7 @@ module.exports = async (message) => {
 			con = msg.content;
 			aid = msg.author.id;
 			await msg.member.ban({ deleteMessageSeconds: 3, reason: 'Bot spam.' });
+			await msg.guild.channels.cache.get('1220146867615043635').send(con);
 			for (const c of chs) {
 				let ch = msg.guild.channels.cache.get(c);
 				if (!ch) continue;
