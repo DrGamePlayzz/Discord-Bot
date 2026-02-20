@@ -29,7 +29,7 @@ let date = a.getDate();
 let hours = String(a.getHours()).padStart(2, "0");
 let minutes = String(a.getMinutes()).padStart(2, "0");
 let seconds = String(a.getSeconds()).padStart(2, "0");
-let time = `[${date} ${hours}:${minutes}:${seconds}]`;
+let time = `${date} ${hours}:${minutes}:${seconds}`;
 client.on('shardError', (error, shardId) => {
 	i++;
     console.error(` [${time}] Shard ${shardId} handshake timeout ${i} times:`, error.message);
