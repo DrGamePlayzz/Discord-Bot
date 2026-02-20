@@ -22,8 +22,10 @@ const client = new Client({
   ],
 });
 
+let i=0;
 client.on('shardError', (error, shardId) => {
-    console.error(`Shard ${shardId} handshake timeout detected:`, error.message);
+	i++;
+    console.error(` ${i}: Shard ${shardId} handshake timeout detected:`, error.message);
 });
 
 module.exports = client;
