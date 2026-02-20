@@ -86,6 +86,8 @@ module.exports = {
 	
         let slogs = time + ` (${interaction.user.id})${interaction.member.displayName}: /${interaction.commandName}.\n`;
 
-        fs.appendFileSync(`/sdcard/Dyru/MortalEmployee/logs/${year}-${month}-${date}.txt`, String(slogs));
+		const p = `/sdcard/Dyru/MortalEmployee/logs/${year}-${month}-${date}.txt`;
+        if (!fs.existSync(p)) return fs.writeFileSync(p, String(slogs));
+        fs.appendFileSync(p), String(slogs);
     }
 };
